@@ -1,1 +1,1 @@
-require File.join("omniauth", "nokia_dvlup")
+require File.join("omniauth", "dvlup")

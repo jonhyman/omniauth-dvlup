@@ -2,7 +2,7 @@ require 'omniauth/strategies/oauth2'
 
 module OmniAuth
   module Strategies
-    class NokiaDVLUP < OmniAuth::Strategies::OAuth2
+    class DVLUP < OmniAuth::Strategies::OAuth2
       BASIC_SCOPE = "basic"
       CODE_RESPONSE_TYPE = "code"
 

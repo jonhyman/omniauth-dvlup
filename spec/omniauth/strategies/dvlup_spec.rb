@@ -1,12 +1,12 @@
 require 'spec_helper'
 require 'omniauth-dvlup'
 
-describe OmniAuth::Strategies::NokiaDVLUP do
+describe OmniAuth::Strategies::DVLUP do
   before :all do
     OmniAuth.config.test_mode = true
   end
 
-  let(:dvlup) {OmniAuth::Strategies::NokiaDVLUP.new({})}
+  let(:dvlup) {OmniAuth::Strategies::DVLUP.new({})}
 
   context "client options" do
     let(:options) {dvlup.options}
@@ -31,16 +31,16 @@ describe OmniAuth::Strategies::NokiaDVLUP do
 
   context "#authorize_options" do
     it "has a basic scope" do
-      dvlup.authorize_params.scope.should == OmniAuth::Strategies::NokiaDVLUP::BASIC_SCOPE
+      dvlup.authorize_params.scope.should == OmniAuth::Strategies::DVLUP::BASIC_SCOPE
     end
 
     it "has 'code' as the response type" do
-      dvlup.authorize_params.response_type.should == OmniAuth::Strategies::NokiaDVLUP::CODE_RESPONSE_TYPE
+      dvlup.authorize_params.response_type.should == OmniAuth::Strategies::DVLUP::CODE_RESPONSE_TYPE
     end
 
     it "has a redirect uri" do
       redirect_uri = "http://www.foo.com/bar"
-      dvlup = OmniAuth::Strategies::NokiaDVLUP.new({}, {:redirect_uri => redirect_uri})
+      dvlup = OmniAuth::Strategies::DVLUP.new({}, {:redirect_uri => redirect_uri})
       dvlup.authorize_params.redirect_uri.should == redirect_uri
     end
   end
