@@ -46,8 +46,8 @@ module OmniAuth
 
       def raw_info
         if @raw_info.nil?
-          details = self.access_token.get("https://www.dvlulp.com/api/users/details").parsed
-          apps = self.access_token.get("https://www.dvlulp.com/api/users/apps").parsed.map do |result|
+          details = self.access_token.get("https://www.dvlup.com/api/users/details").parsed
+          apps = self.access_token.get("https://www.dvlup.com/api/users/apps").parsed.map do |result|
             {
               :app_id => result['appId'],
               :title => result['title'],
